@@ -50,7 +50,7 @@ python을 알면 충분합니다.
 
 ### week 1
 
-- [day 1: django 설치](day01/README.md)
+- [day 1: django overview](day01/README.md)
 - day 2: MTV, GET - path parameter로 인자 받기
 
 ## week 2
