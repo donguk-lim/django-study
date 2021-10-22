@@ -51,7 +51,7 @@ python을 알면 충분합니다.
 ### week 1
 
 - [day 1: django overview](day01/README.md)
-- day 2: MTV, GET - path parameter로 인자 받기
+- [day 2: parameter 전달 받는 방법, 실습 - path parameter로 인자 받기](day02/README.md)
 
 ## week 2
 
