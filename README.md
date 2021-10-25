@@ -55,8 +55,8 @@ python을 알면 충분합니다.
 
 ## week 2
 
-- day3: DTL(Django Template Language)
-- day4: get으로 요청하고 받기(query string)
+- [day3: get으로 요청하고 받기(query string)](day03/README.md)
+- day4: palindrome 실습 & DTL(Django Template Language)
 - day5: post method, bootstrap, template 상속
 
 - day6: static file 제공
