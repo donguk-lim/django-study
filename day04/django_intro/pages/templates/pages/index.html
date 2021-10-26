@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> 1. 반복문 </h3>
+    {% for menu in menus %}
+    <p>
+        {{forloop.counter}} {{menu}}
+    </p>
+    {% endfor %}
+
+    {% for user in empty_list %}
+    {% empty %}
+    <p>현재 가입한 유저가 없습니다.</p>
+    {% endfor %}
+
+    <h3>2. 조건문</h3>
+    {% if "돈까스" in menus %}
+    <p>돈까쓰 존맛탱구리</p>
+    {% endif %}
+    <hr>
+
+    {% for menu in menus %}
+      {{forloop.counter}}번째 도는 중...
+      {% if forloop.first %}
+        <p>짜장면엔 고춧가루지..!!</p>
+      {% else %}
+        <p>{{menu}}</p>
+      {% endif %}
+    {% endfor %}
+
+    <h3>3. length filter 활용</h3>
+    {% for message in messages %}
+      {% if message|length > 5 %}
+        <p>{{message}}, 글자가 너무 길어요.</p>
+      {% else %}
+        <p>{{message}}, {{message|length}}</p>
+      {% endif %}
+    {% endfor %}
+
+    <h3>4. lorem ipsum</h3>
+    {% lorem 3 w %}
+    {% lorem 2 p %}
+
+    <h3>5. 날짜 표현</h3>
+    {{datetimenow}} <br>
+    {% now 'DATETIME_FORMAT' %}
+
+
+</body>
+</html>

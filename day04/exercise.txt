@@ -1,0 +1,4 @@
+~09:30
+palindrome: 문장의 앞뒤를 바꿔도 동일한 문장
+1. url: http://localhost:8000/palindrome/<str:pal>
+return palindrome이 맞는지 아닌지
