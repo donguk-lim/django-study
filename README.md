@@ -57,7 +57,7 @@ python을 알면 충분합니다.
 
 - [day3: get으로 요청하고 받기(query string)](day03/README.md)
 - [day4: palindrome 실습 & DTL(Django Template Language)](day04/README.md)
-- [day5: post method, bootstrap, template 상속](day05/README.md)
+- [day5: post method, bootstrap](day05/README.md)
 
 - day6: static file 제공
 - day6-2: ORM

@@ -27,7 +27,6 @@ http의 post method는 http message의 body에 데이터가 들어갑니다.
 - (http 프로토콜의) post method
 - CSRF / XSS
 - bootstrap 적용
-- 템플릿 상속
 
 
 
