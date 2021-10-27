@@ -1,4 +1,4 @@
-# day05: post로 입력 받기, bootstrap, 템플릿 상속
+# day05: post로 입력 받기, bootstrap
 
 ## 복습([링크](../day04/README.md))
 
