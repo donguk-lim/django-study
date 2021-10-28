@@ -59,19 +59,19 @@ python을 알면 충분합니다.
 - [day4: palindrome 실습 & DTL(Django Template Language)](day04/README.md)
 - [day5: post method, bootstrap](day05/README.md)
 
-- day6: static file 제공
-- day6-2: ORM
-- day7: ORM, CRUD
+- [day6: template 상속, static file 제공](day06/README.md)
+- day7: ORM
+- day8: ORM, CRUD
 
 ## week 3
 
-- day8: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현
-- day9: 게시판 만들기 - 마무리
-- day10: 게시판 만들기 실습
-- day11: ORM의 1:N 관계(e.g. comment)
-- day12: 인증 (1) - 기본 User Model 활용 CRUD
-- day13: 인증 (2) - AbstractUser, AbstractBaseUser
-- day14: 마무리
+- day9: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현
+- day10: 게시판 만들기 - 마무리
+- day11: 게시판 만들기 실습
+- day12: ORM의 1:N 관계(e.g. comment)
+- day13: 인증 (1) - 기본 User Model 활용 CRUD
+- day14: 인증 (2) - AbstractUser, AbstractBaseUser
+- day15: 마무리
   - ORM M:N 관계(e.g. 의사와 환자의 예약 관계, 인스타그램에서 user와 게시물의 좋아요 관계)
   - network debugging(wireshark / fiddler)
   - final project 선정 ==> 시간이 없어서 할 지 말지 고민 중..
