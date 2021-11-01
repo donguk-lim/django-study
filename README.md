@@ -24,11 +24,6 @@ python을 알면 충분합니다.
 
 - zoom
 
-  - https://zoom.us/j/4031340263?pwd=eGQwSFM3R3RLRVVXd2RtOHErdThndz09
-
-    회의 ID: 403 134 0263
-    암호: 0KEJ8H
-
 - 월 ~ 금 / 오전 09시 00분
 
 
@@ -60,10 +55,11 @@ python을 알면 충분합니다.
 - [day5: post method, bootstrap](day05/README.md)
 
 - [day6: template 상속, static file 제공](day06/README.md)
-- day7: ORM
-- day8: ORM, CRUD
+- [day7: ORM](day07/README.md)
 
 ## week 3
+
+- [day8: ORM, CRUD](day08/README.md)
 
 - day9: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현
 - day10: 게시판 만들기 - 마무리
