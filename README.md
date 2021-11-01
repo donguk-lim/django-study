@@ -53,18 +53,18 @@ python을 알면 충분합니다.
 - [day3: get으로 요청하고 받기(query string)](day03/README.md)
 - [day4: palindrome 실습 & DTL(Django Template Language)](day04/README.md)
 - [day5: post method, bootstrap](day05/README.md)
-
 - [day6: template 상속, static file 제공](day06/README.md)
 - [day7: ORM](day07/README.md)
 
 ## week 3
 
 - [day8: ORM, CRUD](day08/README.md)
-
 - day9: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현
 - day10: 게시판 만들기 - 마무리
 - day11: 게시판 만들기 실습
 - day12: ORM의 1:N 관계(e.g. comment)
+
+## additional
 - day13: 인증 (1) - 기본 User Model 활용 CRUD
 - day14: 인증 (2) - AbstractUser, AbstractBaseUser
 - day15: 마무리
