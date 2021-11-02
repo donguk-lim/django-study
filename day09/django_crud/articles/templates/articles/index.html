@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>articles</h2>
+<br><br>
+<ul>
+    {% for article in articles %}
+      <li>
+          title: {{article.title}}
+      </li>
+    {% empty %}
+    게시물이 없습니다!!
+    {% endfor %}
+</ul>
+{% endblock %}
