@@ -59,8 +59,8 @@ python을 알면 충분합니다.
 ## week 3
 
 - [day8: ORM, CRUD](day08/README.md)
-- day9: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현
-- day10: 게시판 만들기 - 마무리
+- [day9: 게시판 만들기 - list + CRUD에서 list, C, R까지 구현](day09/README.md)
+- [day10: 게시판 만들기 - 마무리](day10/README.md)
 - day11: 게시판 만들기 실습
 - day12: ORM의 1:N 관계(e.g. comment)
 

@@ -7,15 +7,15 @@ urlpatterns = [
     # index
     path('', views.index, name="index"),
 
-    # # Create
+    # Create
     path('create/', views.create, name="create"),
 
-    # # Read
+    # Read
     path('<int:article_id>/', views.read, name="read"),
 
-    # # Update
+    # Update
     path('<int:article_id>/update/', views.update, name="update"),
 
-    # # Delete
+    # Delete
     path('<int:article_id>/delete/', views.delete, name="delete"),
 ]
