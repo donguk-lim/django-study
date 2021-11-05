@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>
+    title: {{article.title}}
+</h2>
+<p>
+    content: {{article.content}}
+</p>
+<p>
+    created_at : {{article.created_at}}
+    updated_at : {{article.updated_at}}
+</p>
+
+{% for comment in article.comments.all %}
+<p>
+    <div id="comment">comment {{comment.pk}}: {{comment.content}}</div>
+     <a href="" class="btn btn-outline-primary" onclick="javascript:changeComment()">수정</a> <a href="{% url 'articles:comment_delete' article.pk comment.pk %}" class="btn btn-outline-primary">삭제</a>
+
+</p>
+{% empty %}
+    댓글이 없습니다.
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Article</span></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                {% if user.is_authenticated %}
+                    <span>안녕하세요 <a href="{% url 'accounts:myaccount' %}">{{user.username}}</a>님!!</span>
+                    <form action="{% url 'accounts:logout' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" value="로그아웃" class="btn btn-outline-primary">
+                    </form>
+                    <!-- <a href="{% url 'accounts:logout' %}" class="btn btn-outline-primary">로그아웃</a> -->
+                {% else %}
+                    <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary">로그인</a>
+                    <a href="{% url 'accounts:signup' %}" class="btn btn-outline-primary">회원가입</a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>

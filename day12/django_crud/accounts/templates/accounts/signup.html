@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>회원가입</h2>
+<form action="{% url 'accounts:signup' %}" method="POST">
+    {% csrf_token %}
+    <label for="username">username: </label>
+    <input type="text" name="username" id="username"> <br><br>
+    <label for="email">email: </label>
+    <input type="email" name="email" id="email"> <br><br>
+    <label for="password">password: </label>
+    <input type="password" name="password" id="password">
+    <input type="submit" value="회원가입">
+</form>
+{% endblock %}

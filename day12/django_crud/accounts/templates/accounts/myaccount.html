@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>회원 정보</h2>
+<p>
+    username: {{user.username}} <br>
+    email: {{user.email}} <br>
+    <form action="{% url 'accounts:signout' %}" method="POST">
+        {% csrf_token %}
+        <a href="{% url 'accounts:update_account' %}" class="btn btn-outline-primary">회원정보 수정</a>
+        <input type="submit" value="회원탈퇴" class="btn btn-outline-primary">
+    </form>
+</p>
+{% endblock %}

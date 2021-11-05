@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>이메일 업데이트</h2>
+<form action="{% url 'accounts:update_account' %}" method="POST">
+    {% csrf_token %}
+    <input type="email" value="{{user.email}}" name="email">
+    <input type="submit" value="업데이트">
+</form>
+{% endblock %}
+
+
+<!-- fastapi -->
+<!-- gabia: domain -->
+<!-- aws lightsail -->

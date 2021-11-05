@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>
+    title: {{article.title}}
+</h2>
+<p>
+    content: {{article.content}}
+</p>
+<p>
+    created_at : {{article.created_at}}
+    updated_at : {{article.updated_at}}
+</p>
+
+{% for comment in article.comments.all %}
+<p>
+    <!-- comment 생성 -->
+    <form action="{% url articles:create_comment %}" method="POST">
+        <input type="text" name="content">
+        <input type="button" value="코멘트 생성">
+    </form>
+
+    <!-- comment 불러오기 -->
+    comment {{comment.pk}}: {{comment.content}}
+    
+</p>
+{% empty %}
+    댓글이 없습니다.
+{% endfor %}
+{% endblock %}

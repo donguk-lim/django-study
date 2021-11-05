@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>articles</h2>
+<br><br>
+<div style="text-align: right;">
+  <a href="{% url 'articles:create' %}" class="btn btn-outline-primary">게시물 생성</a>
+</div>
+<ul>
+    {% for article in articles %}
+      <li>
+        <a href="{% url 'articles:read' article.pk %}">title: {{article.title}}</a><a href="{% url 'articles:delete' article.pk %}" class="mx-2 btn btn-outline-primary">게시물 삭제</a>
+      </li>
+    {% empty %}
+    게시물이 없습니다!!
+    {% endfor %}
+</ul>
+{% endblock %}
