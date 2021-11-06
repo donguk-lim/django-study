@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Article
+from .models import Article, Comment
 
 # Create your views here.
 def index(request):
@@ -48,3 +48,26 @@ def delete(request, article_id):
         article.delete()
     
     return redirect("articles:index")
+
+def comment_create(request, article_id):
+    if request.method == "POST":
+        content = request.POST.get("content")
+        comment = Comment()
+        comment.article = Article.objects.get(pk=article_id)
+        comment.content = content
+        comment.save()
+    return redirect("articles:read", article_id)
+
+def comment_update(request, article_id, comment_id):
+    if request.method == "POST":
+        content = request.POST.get("content")
+        comment = Comment.objects.get(pk=comment_id)
+        comment.content = content
+        comment.save()
+    return redirect("articles:read", article_id)
+
+def comment_delete(request, article_id, comment_id):
+    if request.method == "POST":
+        comment = Comment.objects.get(pk=comment_id)
+        comment.delete()
+    return redirect("articles:read", article_id)

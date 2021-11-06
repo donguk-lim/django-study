@@ -19,15 +19,15 @@ urlpatterns = [
     # Delete
     path('<int:article_id>/delete/', views.delete, name="delete"),
 
-    # # comment
+    # comment
 
-    # # Create
-    # path('<int:article_id>/comments/create/', views.comment_create, name="comment_create"),
+    # Create
+    path('<int:article_id>/comments/create/', views.comment_create, name="comment_create"),
 
-    # # Update
-    # path('<int:article_id>/comments/<int:comment_id>/update/', views.comment_update, name="comment_update"),
+    # Update
+    path('<int:article_id>/comments/<int:comment_id>/update/', views.comment_update, name="comment_update"),
 
-    # # Delete
-    # path('<int:article_id>/comments/<int:comment_id>/delete/', views.comment_delete, name="comment_delete"),
+    # Delete
+    path('<int:article_id>/comments/<int:comment_id>/delete/', views.comment_delete, name="comment_delete"),
 
 ]
