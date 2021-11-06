@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Article, Comment
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout, get_user
 
 # Create your views here.
 def index(request):
@@ -10,9 +12,14 @@ def index(request):
 
 def create(request):
     if request.method == "POST":
+        user = get_user(request)
+        print(user)
+        if not user.is_authenticated:
+            return redirect("articles:index")
         article = Article()
         article.title = request.POST.get("title")
         article.content = request.POST.get("content")
+        article.author = user
         article.save()
 
         return redirect("articles:index")
@@ -45,6 +52,10 @@ def update(request, article_id):
 def delete(request, article_id):
     if request.method == "GET":
         article = Article.objects.get(pk=article_id)
+
+        current_user = get_user(request)
+        if article.author != current_user:
+            return redirect("articles:index")
         article.delete()
     
     return redirect("articles:index")
