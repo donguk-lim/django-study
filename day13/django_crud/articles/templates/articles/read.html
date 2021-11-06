@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>
+    title: {{article.title}}
+</h2>
+<p>
+    content: {{article.content}}
+</p>
+<p>
+    created_at : {{article.created_at}}
+    updated_at : {{article.updated_at}}
+</p>
+
+<!-- comment 생성 -->
+<form action="{% url 'articles:comment_create' article.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="content">
+    <input type="submit" class="btn btn-outline-primary" value="댓글 달기">
+</form>
+
+{% for comment in article.comments.all %}
+<p id="comment-{{comment.id}}-p">
+    <!-- comment 불러오기 -->
+    comment {{comment.pk}}:<span id="comment-{{comment.id}}"> {{comment.content}}</span>
+    <!-- comment update -->
+    <span class="btn btn-outline-primary" id="comment-{{comment.id}}-btn" onclick="javascript:update_comment('{{article.id}}', '{{comment.id}}')">수정</span>
+    <!-- comment 삭제 -->
+    <span class="btn btn-outline-primary" onclick="javascript:post_comment_delete('{{article.id}}', '{{comment.id}}')">삭제</span>
+    
+</p>
+{% empty %}
+    댓글이 없습니다.
+{% endfor %}
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.defaults.xsrfCookieName = 'csrftoken';
+    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+    function post_comment_update(article_id, comment_id, content)
+    {
+        var data = `content=${content}`;
+        axios.post(`/${article_id}/comments/${comment_id}/update/`, data)
+        .then(function(response) {
+          console.log(response);
+          window.location.reload()
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+
+    function post_comment_delete(article_id, comment_id)
+    {
+        axios.post(`/${article_id}/comments/${comment_id}/delete/`)
+        .then(function(response) {
+          console.log(response);
+          window.location.reload()
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+
+
+    function update_comment(article_id, comment_id)
+    {
+        var comment = document.getElementById(`comment-${comment_id}-p`);
+        var div = document.createElement('div');
+
+        var content = document.createElement('input');
+        content.value = document.getElementById(`comment-${comment_id}`).innerText
+
+        var btnUpdate = document.createElement('input');
+        btnUpdate.type = "button";
+        btnUpdate.value= "업데이트";
+        btnUpdate.className += "btn btn-outline-primary";
+        btnUpdate.addEventListener("click", function(){post_comment_update(article_id, comment_id, content.value)}, false);
+
+        div.appendChild(content);
+        div.appendChild(btnUpdate);
+
+        comment.appendChild(div)
+    }
+</script>
+{% endblock %}

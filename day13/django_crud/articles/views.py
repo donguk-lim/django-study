@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Article, Comment
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout, get_user
 
 # Create your views here.
 def index(request):
